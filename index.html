@@ -213,12 +213,33 @@ section { padding: 8rem 3rem; transition: background var(--transition); }
   letter-spacing: 0.15em; text-transform: uppercase; padding: 0.2rem 0.6rem;
   border: 1px solid; margin-bottom: 0.75rem;
 }
-.pub-status.in_press {
-  color: #c8b91b; /* yellow-green between orange and green */
-  border-color: rgba(200, 185, 27, 0.4);
+
+/* Under review → anchor (unchanged) */
+.pub-status.review {
+  color: #f59e0b; /* orange */
+  border-color: rgba(245, 158, 11, 0.4);
 }
-.pub-status.review  { color: #f5a364; border-color: rgba(245,163,100,0.4); }
-.pub-status.published { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+
+/* Minor revision → slightly closer to orange */
+.pub-status.revision {
+  color: #d4b814; /* yellow leaning warm */
+  border-color: rgba(212, 184, 20, 0.4);
+}
+
+/* Accepted → still green but warmer than before */
+.pub-status.accepted {
+  color: #65b32e; /* green shifted toward yellow */
+  border-color: rgba(101, 179, 46, 0.4);
+}
+
+/* Published → unchanged */
+.pub-status.published {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+
+
 .pub-title { font-family: var(--serif); font-size: 1.15rem; line-height: 1.3; margin-bottom: 0.5rem; }
 .pub-authors { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.35rem; line-height: 1.6; }
 .pub-venue { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
@@ -395,11 +416,11 @@ const SITE_DATA = {
   publications: [
       {
       year:    "2026",
-      status:  "review",
-      statusLabel: "Under Review",
+      status:  "published",
+      statusLabel: "Accepted",
       title:   "Vision and Foundation Models for Automated ASTM Grain Size Estimation from Microscopy Images",
       authors: "<strong>A. Mueez</strong>, S. Vyas",
-      venue:   "CVMI Workshop, CVPR 2026  · Submitted March 2026",
+      venue:   "Computer Vision for Multimodal Microscopy Image Analysis (CVMI) Workshop, CVPR 2026",
     },
     {
       year:    "2026",
@@ -407,32 +428,32 @@ const SITE_DATA = {
       statusLabel: "Under Review",
       title:   "Beyond Multi-Stage Pipelines: End-to-End Analog Gauge Reading in Industrial Environments via Specialized Vision-Language Models",
       authors: "<strong>A. Mueez</strong>, A. Baranwala, J. Chaj-Mejia, J. T. Voelker, G. Bhatia, S. Vyas",
-      venue:   "Engineering Applications of Artificial Intelligence Journal · Submitted February 2026",
+      venue:   "Engineering Applications of Artificial Intelligence (EAAI) · Submitted March 2026",
     },
     {
-      year:    "2026",
-      status:  "in_press",
-      statusLabel: "In Press",
+      year:    "2025",
+      status:  "revision",
+      statusLabel: "Revise & resubmit (minor revision)",
       title:   "A Generative Approach for Improving Multi-Label Defect Classification in Photovoltaic Modules",
       authors: "<strong>A. Mueez</strong>, Y. S. Rawat, S. Vyas",
-      venue:   "Solar Energy Journal · Submitted October 2025",
+      venue:   "Solar Energy, Special Issue: Advances in Performance Monitoring, Diagnostics, and Reliability Assessment of Photovoltaic Systems · Submitted October 2025",
     },
     {
       year:    "2025",
       status:  "published",
-      statusLabel: "Published — ICCV 2025",
+      statusLabel: "Published",
       title:   "SynSpill: Improved Industrial Spill Detection with Synthetic Data",
       authors: "A. Baranwal, <strong>A. Mueez</strong>, J. Voelker, G. Bhatia, S. Vyas",
-      venue:   "ICCV VISION Workshop, 2025",
+      venue:   "Vision-based Industrial Inspection (VISION) Workshop, ICCV 2025",
       link:    { label: "View Paper ↗", href: "https://openaccess.thecvf.com/content/ICCV2025W/VISION'25/papers/Baranwal_SynSpill_Improved_Industrial_Spill_Detection_With_Synthetic_Data_ICCVW_2025_paper.pdf" },
     },
     {
       year:    "2020",
       status:  "published",
-      statusLabel: "Published — IEEE TENSYMP",
+      statusLabel: "Published",
       title:   "A Cost-Effective Framework to Predict the Ripeness of Any Fruit Based on Color Space",
       authors: "<strong>A. Mueez</strong>",
-      venue:   "IEEE TENSYMP, 2020",
+      venue:   "IEEE Region 10 Symposium (TENSYMP), 2020",
       link:    { label: "View on IEEE ↗", href: "https://ieeexplore.ieee.org/abstract/document/9231002" },
     },
   ],
