@@ -86,7 +86,7 @@ strong { font-weight: 600; }
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 3rem; height: 64px;
+  padding: 0 max(3rem, calc((100% - 1100px) / 2)); height: 64px;
   border-bottom: 1px solid transparent;
   transition: background var(--dur) var(--ease),
               border-color var(--dur) var(--ease),
@@ -193,7 +193,7 @@ strong { font-weight: 600; }
   grid-template-columns: 1fr 380px;
   gap: 4rem;
   align-items: center;
-  padding: 8rem 3rem 6rem;
+  padding: 8rem max(3rem, calc((100% - 1100px) / 2)) 6rem;
   position: relative;
   overflow: hidden;
 }
@@ -296,12 +296,9 @@ strong { font-weight: 600; }
 .btn:hover { color: #fff; border-color: var(--accent); }
 .btn:hover::before { transform: translateX(0); }
 
-.btn-primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-.btn-primary::before { background: rgba(0,0,0,0.15); }
+/* btn-primary background styles removed to only highlight on hover */
+.btn-primary { }
+.btn-primary::before { }
 
 /* Email row */
 .hero-emails {
@@ -375,7 +372,7 @@ strong { font-weight: 600; }
 /* ═══════════════════════════════════════════
    SECTION SHARED
 ═══════════════════════════════════════════ */
-.section { padding: 7rem 3rem; }
+.section { padding: 7rem max(3rem, calc((100% - 1100px) / 2)); }
 .section-alt { background: var(--bg-alt); }
 
 .section-header { margin-bottom: 4rem; }
@@ -672,7 +669,7 @@ strong { font-weight: 600; }
 ═══════════════════════════════════════════ */
 .footer {
   border-top: 1px solid var(--border);
-  padding: 2rem 3rem;
+  padding: 2rem max(3rem, calc((100% - 1100px) / 2));
   display: flex; align-items: center;
   justify-content: space-between;
   flex-wrap: wrap; gap: 1rem;
@@ -743,24 +740,12 @@ strong { font-weight: 600; }
 
 <body>
 
-<!-- ─────────────────────────────────────────
-     MOBILE MENU
-───────────────────────────────────────── -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true"></div>
 
-<!-- ─────────────────────────────────────────
-     NAVIGATION
-───────────────────────────────────────── -->
 <nav class="nav" id="nav"></nav>
 
-<!-- ─────────────────────────────────────────
-     MAIN CONTENT
-───────────────────────────────────────── -->
 <main id="main"></main>
 
-<!-- ─────────────────────────────────────────
-     FOOTER
-───────────────────────────────────────── -->
 <footer class="footer" id="footer"></footer>
 
 <script>
@@ -803,10 +788,10 @@ const SITE = {
   /* ── Navigation items ──────────────────────── */
   nav: [
     { label: "About",        href: "#about" },
-    { label: "Publications", href: "#publications" },
-    { label: "Projects",     href: "#projects" },
-    { label: "Experience",   href: "#experience" },
     { label: "Education",    href: "#education" },
+    { label: "Publications", href: "#publications" },
+    { label: "Experience",   href: "#experience" },
+    { label: "Projects",     href: "#projects" },
   ],
 
   /* ── Publications ──────────────────────────────
@@ -971,9 +956,9 @@ const SITE = {
   projects: [
     {
       title:       "ClassX",
-      year:        "2020 – 2022",
+      year:        "2020 – 2021",
       description: "A digital course hub built to facilitate learning during the pandemic — organizing lecture materials, resources, and student communication in one accessible place.",
-      tags:        ["Education", "Web"],
+      tags:        ["Education"],
       href:        "https://mueez-overflow.github.io/classx/",
       linkLabel:   "Visit Project ↗",
     },
@@ -1101,7 +1086,7 @@ function renderProjects() {
   section.id = 'projects';
   section.innerHTML = `
     <div class="section-header">
-      <p class="section-label reveal" data-num="03">Projects</p>
+      <p class="section-label reveal" data-num="04">Projects</p>
       <h2 class="section-title reveal reveal-delay-1">What I've <em>built</em></h2>
     </div>
     <div class="projects-grid">
@@ -1142,7 +1127,7 @@ function renderExperience() {
   section.id = 'experience';
   section.innerHTML = `
     <div class="section-header">
-      <p class="section-label reveal" data-num="04">Employment</p>
+      <p class="section-label reveal" data-num="03">Employment</p>
       <h2 class="section-title reveal reveal-delay-1">Where I've <em>worked</em></h2>
     </div>
     ${timelineHTML(SITE.experience)}
@@ -1156,7 +1141,7 @@ function renderEducation() {
   section.id = 'education';
   section.innerHTML = `
     <div class="section-header">
-      <p class="section-label reveal" data-num="05">Education</p>
+      <p class="section-label reveal" data-num="01">Education</p>
       <h2 class="section-title reveal reveal-delay-1">What I've <em>studied</em></h2>
     </div>
     ${timelineHTML(SITE.education)}
@@ -1183,10 +1168,10 @@ function renderAll() {
   renderMobileMenu();
   const main = document.getElementById('main');
   main.appendChild(renderHero());
-  main.appendChild(renderPublications());
-  main.appendChild(renderProjects());
-  main.appendChild(renderExperience());
   main.appendChild(renderEducation());
+  main.appendChild(renderPublications());
+  main.appendChild(renderExperience());
+  main.appendChild(renderProjects());
   renderFooter();
 }
 
@@ -1203,20 +1188,15 @@ const themeBtn = document.getElementById('themeBtn');
 function setTheme(t) {
   root.setAttribute('data-theme', t);
   themeBtn.textContent = t === 'dark' ? '☀' : '☽';
-  localStorage.setItem('theme', t);
 }
 
-// Boot: use stored pref, else system pref
-const stored = localStorage.getItem('theme');
-if (stored) {
-  setTheme(stored);
-} else {
-  setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-}
+// Boot: strictly use system pref
+const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+setTheme(mediaQuery.matches ? 'dark' : 'light');
 
-// Follow OS changes when no manual pref stored
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+// Follow OS changes directly
+mediaQuery.addEventListener('change', e => {
+  setTheme(e.matches ? 'dark' : 'light');
 });
 
 themeBtn.addEventListener('click', () => {
