@@ -724,8 +724,8 @@ strong { font-weight: 600; }
 
 @media (max-width: 480px) {
   html { font-size: 15px; }
-  .hero-links { flex-direction: column; align-items: flex-start; }
-  .hero-links .btn { width: 100%; justify-content: center; }
+  .hero-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; }
+  .hero-links .btn { width: 100%; justify-content: center; padding: 0.6rem 0; }
 }
 
 /* ═══════════════════════════════════════════
