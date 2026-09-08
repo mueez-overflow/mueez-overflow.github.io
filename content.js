@@ -119,7 +119,7 @@ const CONTENT = {
     },
     {
       "date": "Jun 2019 — Feb 2022",
-      "role": "Lecturer (CSE Department)",
+      "role": "Lecturer",
       "organization": "Southeast University",
       "details": [
         "Courses: Programming Language II (Java), Computer Architecture, Database Design, Digital Logic Design, Computer Fundamentals",
@@ -129,8 +129,8 @@ const CONTENT = {
     },
     {
       "date": "Apr 2019 — Jun 2019",
-      "role": "Software Engineer (System Architecture)",
-      "organization": "MagnusHub",
+      "role": "Software Engineer",
+      "organization": "MagnusHub (System Architecture)",
       "details": [
         "Overhauled system architecture and reduced server overhead with AsyncPG for the OTORide app",
         "Developed Python protocols for smart locks and smart scooters",
@@ -139,8 +139,8 @@ const CONTENT = {
     },
     {
       "date": "Jan 2019 — Mar 2019",
-      "role": "Software Engineering Intern (Mobile Apps R&D)",
-      "organization": "BRAC IT Services",
+      "role": "Software Engineering Intern",
+      "organization": "BRAC IT Services (Mobile Apps R&D)",
       "details": [
         "Designed and implemented PostgreSQL database models using Django",
         "Developed RESTful APIs using Django Rest Framework",
@@ -150,7 +150,7 @@ const CONTENT = {
     {
       "date": "Jun 2017 — Aug 2018",
       "role": "Undergraduate Teaching Assistant",
-      "organization": "BRAC University (CSE Department)",
+      "organization": "BRAC University",
       "details": [
         "Courses: Programming Language I & II, Discrete Mathematics",
         "Assisted students in labs and graded course assignments"
