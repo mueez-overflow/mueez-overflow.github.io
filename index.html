@@ -7,16 +7,16 @@
   <meta name="description" content="Computer Science PhD student at the University of Central Florida. Research in computer vision, vision-language models, and synthetic data for real-world applications.">
   <link rel="icon" href="favicon.svg">
   <link rel="stylesheet" href="site.css">
-  <script src="content.js" defer></script>
   <script src="site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Abdul Mueez, home">a<span>m</span><i></i></a>
+    <a class="wordmark" href="#top" aria-label="Abdul Mueez, home">a<span>m</span><i aria-hidden="true"></i></a>
+
     <nav aria-label="Main navigation">
-      <a href="#about">About</a>
+      <a href="#about" aria-current="location">About</a>
       <a href="#publications">Publications</a>
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
@@ -25,13 +25,19 @@
 
     <div class="theme-control">
       <span class="theme-symbol" aria-hidden="true">◐</span>
-      <span class="theme-switch" role="switch" tabindex="0" aria-checked="false" aria-label="Dark mode" data-unchecked>
+      <button class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Dark mode" data-unchecked>
         <span data-slot="switch-thumb" data-unchecked></span>
-      </span>
+      </button>
     </div>
   </header>
 
   <main id="main">
+    <!-- ========================================================
+         ABOUT / BIO
+         All portfolio information lives in this HTML file.
+         Edit text, links, education, experience, publications,
+         and projects directly here. site.js contains behavior only.
+         ======================================================== -->
     <section class="overview" id="about" aria-labelledby="name">
       <div class="profile-summary" id="top">
         <h1 id="name">Abdul Mueez</h1>
@@ -55,41 +61,272 @@
           <picture>
             <img src="observer-coast.gif" width="480" height="632" fetchpriority="high" alt="A person standing on a rocky shoreline, looking out over the water beneath an overcast sky.">
           </picture>
-          <span class="frame-corner tl"></span>
-          <span class="frame-corner br"></span>
+          <span class="frame-corner tl" aria-hidden="true"></span>
+          <span class="frame-corner br" aria-hidden="true"></span>
         </figure>
         <blockquote>By the very act of observing, the observer affects the observed reality.</blockquote>
       </div>
     </section>
 
+    <!-- PUBLICATIONS -->
     <section class="publications" id="publications" aria-labelledby="publications-heading">
       <div class="section-heading">
         <h2 id="publications-heading">Publications</h2>
       </div>
-      <div class="publication-list" id="publication-list"></div>
+
+      <div class="publication-list">
+        <article class="publication">
+          <div class="publication-body">
+            <h3>SolarVQA: A Benchmark for Visual Question Answering in Photovoltaic Defect Inspection</h3>
+            <p class="authors"><strong>A. Mueez</strong>, S. Vyas</p>
+            <div class="publication-meta">
+              <p>NeurIPS · Submitted May 2026</p>
+              <div class="publication-actions">
+                <span class="status under-review"><i aria-hidden="true"></i>Under Review</span>
+                <span class="paper-unavailable">Paper link not yet available</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="publication-body">
+            <h3>A Generative Approach for Improving Multi-Label Defect Classification in Photovoltaic Modules</h3>
+            <p class="authors"><strong>A. Mueez</strong>, Y. S. Rawat, S. Vyas</p>
+            <div class="publication-meta">
+              <p>Solar Energy</p>
+              <div class="publication-actions">
+                <span class="status"><i aria-hidden="true"></i>Published</span>
+                <a class="paper-link" href="https://www.sciencedirect.com/science/article/pii/S0038092X26006328" target="_blank" rel="noopener noreferrer">Read paper<span class="sr-only">: A Generative Approach for Improving Multi-Label Defect Classification in Photovoltaic Modules</span> <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="publication-body">
+            <h3>Bridging Foundation Models and ASTM Metallurgical Standards for Automated Grain Size Estimation from Microscopy Images</h3>
+            <p class="authors"><strong>A. Mueez</strong>, S. Vyas</p>
+            <div class="publication-meta">
+              <p>Computer Vision for Multimodal Microscopy Image Analysis (CVMI) Workshop, CVPR 2026</p>
+              <div class="publication-actions">
+                <span class="status"><i aria-hidden="true"></i>Published</span>
+                <a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2026W/CVMI/papers/Mueez_Bridging_Foundation_Models_and_ASTM_Metallurgical_Standards_for_Automated_Grain_CVPRW_2026_paper.pdf" target="_blank" rel="noopener noreferrer">Read paper<span class="sr-only">: Bridging Foundation Models and ASTM Metallurgical Standards for Automated Grain Size Estimation from Microscopy Images</span> <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="publication-body">
+            <h3>Vision-Language Models for Analog Gauge Reading: An Empirical Study of Specialization, Transfer and Reliability</h3>
+            <p class="authors"><strong>A. Mueez</strong>, A. Baranwala, J. Chaj-Mejia, J. T. Voelker, G. Bhatia, S. Vyas</p>
+            <div class="publication-meta">
+              <p>Engineering Applications of Artificial Intelligence (EAAI) · Submitted March 2026</p>
+              <div class="publication-actions">
+                <span class="status under-review"><i aria-hidden="true"></i>Under Review</span>
+                <a class="paper-link" href="https://arxiv.org/pdf/2608.17723" target="_blank" rel="noopener noreferrer">Read paper<span class="sr-only">: Vision-Language Models for Analog Gauge Reading: An Empirical Study of Specialization, Transfer and Reliability</span> <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="publication-body">
+            <h3>SynSpill: Improved Industrial Spill Detection with Synthetic Data</h3>
+            <p class="authors">A. Baranwal, <strong>A. Mueez</strong>, J. Voelker, G. Bhatia, S. Vyas</p>
+            <div class="publication-meta">
+              <p>Vision-based Industrial Inspection (VISION) Workshop, ICCV 2025</p>
+              <div class="publication-actions">
+                <span class="status"><i aria-hidden="true"></i>Published</span>
+                <a class="paper-link" href="https://openaccess.thecvf.com/content/ICCV2025W/VISION'25/papers/Baranwal_SynSpill_Improved_Industrial_Spill_Detection_With_Synthetic_Data_ICCVW_2025_paper.pdf" target="_blank" rel="noopener noreferrer">Read paper<span class="sr-only">: SynSpill: Improved Industrial Spill Detection with Synthetic Data</span> <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <div class="publication-body">
+            <h3>A Cost-Effective Framework to Predict the Ripeness of Any Fruit Based on Color Space</h3>
+            <p class="authors"><strong>A. Mueez</strong></p>
+            <div class="publication-meta">
+              <p>IEEE Region 10 Symposium (TENSYMP), 2020</p>
+              <div class="publication-actions">
+                <span class="status"><i aria-hidden="true"></i>Published</span>
+                <a class="paper-link" href="https://ieeexplore.ieee.org/abstract/document/9231002" target="_blank" rel="noopener noreferrer">Read paper<span class="sr-only">: A Cost-Effective Framework to Predict the Ripeness of Any Fruit Based on Color Space</span> <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
+    <!-- EDUCATION -->
     <section class="education" id="education" aria-labelledby="education-heading">
       <div class="section-heading">
         <h2 id="education-heading">Education</h2>
       </div>
-      <div class="education-list" id="education-list"></div>
+
+      <div class="education-list">
+        <article>
+          <div class="degree-date mono"><span>Present</span></div>
+          <h3>PhD in Computer Science</h3>
+          <p class="institution">University of Central Florida</p>
+          <p>Advisor: <a href="https://vyas-lab.github.io/" target="_blank" rel="noopener noreferrer">Dr. Shruti Vyas <span aria-hidden="true">↗</span></a></p>
+        </article>
+
+        <article>
+          <div class="degree-date mono"><span>May 2026</span></div>
+          <h3>MS in Computer Science</h3>
+          <p class="institution">University of Central Florida</p>
+          <p>CGPA: 3.9 / 4.0</p>
+        </article>
+
+        <article>
+          <div class="degree-date mono"><span>Dec 2018</span></div>
+          <h3>BS in Computer Science &amp; Engineering</h3>
+          <p class="institution">BRAC University</p>
+          <p>CGPA: 3.88 / 4.0</p>
+        </article>
+      </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section class="experience content-section" id="experience" aria-labelledby="experience-heading">
       <div>
         <div class="experience-heading">
           <h2 id="experience-heading">Experience</h2>
         </div>
-        <div class="experience-list" id="experience-list"></div>
+
+        <div class="experience-list">
+          <article>
+            <div class="experience-date mono">Aug 2022 — Present</div>
+            <div class="experience-detail">
+              <h3>Graduate Research Assistant</h3>
+              <p class="organization">University of Central Florida</p>
+              <ul>
+                <li>Researching adaptation of deep learning and vision-language models for industrial applications</li>
+                <li>Developing data-efficient training strategies to improve model robustness on limited data</li>
+                <li>Advisor: Dr. Shruti Vyas</li>
+              </ul>
+            </div>
+            <span aria-hidden="true" class="experience-index mono">01</span>
+          </article>
+
+          <article>
+            <div class="experience-date mono">Dec 2024 — Sept 2025</div>
+            <div class="experience-detail">
+              <h3>Data Science Researcher</h3>
+              <p class="organization">Siemens Energy</p>
+              <ul>
+                <li>Improved production inspection setups by deploying optimized Qwen 2.5 VL models</li>
+                <li>Addressed data gaps by designing an SDXL generative pipeline for domain-specific scenes</li>
+              </ul>
+            </div>
+            <span aria-hidden="true" class="experience-index mono">02</span>
+          </article>
+
+          <article>
+            <div class="experience-date mono">Aug 2023 — Apr 2024</div>
+            <div class="experience-detail">
+              <h3>Graduate Teaching Assistant</h3>
+              <p class="organization">University of Central Florida</p>
+              <ul>
+                <li>Courses: Computer Science I, Database Management Systems</li>
+                <li>Assisted in teaching, grading and held office hours for student support</li>
+              </ul>
+            </div>
+            <span aria-hidden="true" class="experience-index mono">03</span>
+          </article>
+
+          <article>
+            <div class="experience-date mono">Feb 2022 — Jul 2022</div>
+            <div class="experience-detail">
+              <h3>Adjunct Lecturer</h3>
+              <p class="organization">Monash Pathways at Universal College Bangladesh</p>
+              <ul>
+                <li>Courses: Introduction to Computer Systems, Networks and Security, Computing for Engineers</li>
+                <li>Coordinated with unit leaders to ensure consistency across course materials</li>
+              </ul>
+            </div>
+            <span aria-hidden="true" class="experience-index mono">04</span>
+          </article>
+
+          <article>
+            <div class="experience-date mono">Jun 2019 — Feb 2022</div>
+            <div class="experience-detail">
+              <h3>Lecturer</h3>
+              <p class="organization">Southeast University</p>
+              <ul>
+                <li>Courses: Programming Language II (Java), Computer Architecture, Database Design, Digital Logic Design, Computer Fundamentals</li>
+                <li>Built a <a class="inline-course-link" href="https://sites.google.com/view/abdulmueez/classx" target="_blank" rel="noopener noreferrer">digital course hub</a> to facilitate learning during the pandemic</li>
+                <li>Supervised student research projects resulting in two articles published in SEUJCS</li>
+              </ul>
+            </div>
+            <span aria-hidden="true" class="experience-index mono">05</span>
+          </article>
+
+          <article>
+            <div class="experience-date mono">Apr 2019 — Jun 2019</div>
+            <div class="experience-detail">
+              <h3>Software Engineer</h3>
+              <p class="organization">MagnusHub (System Architecture)</p>
+              <ul>
+                <li>Overhauled system architecture and reduced server overhead with AsyncPG for the OTORide app</li>
+                <li>Developed Python protocols for smart locks and smart scooters</li>
+                <li>Built AsyncIO TCP server to manage device and API requests</li>
+              </ul>
+            </div>
+            <span aria-hidden="true" class="experience-index mono">06</span>
+          </article>
+
+          <article>
+            <div class="experience-date mono">Jan 2019 — Mar 2019</div>
+            <div class="experience-detail">
+              <h3>Software Engineering Intern</h3>
+              <p class="organization">BRAC IT Services (Mobile Apps R&amp;D)</p>
+              <ul>
+                <li>Designed and implemented PostgreSQL database models using Django</li>
+                <li>Developed RESTful APIs using Django Rest Framework</li>
+                <li>Wrote unit tests and participated in integration testing</li>
+              </ul>
+            </div>
+            <span aria-hidden="true" class="experience-index mono">07</span>
+          </article>
+
+          <article>
+            <div class="experience-date mono">Jun 2017 — Aug 2018</div>
+            <div class="experience-detail">
+              <h3>Undergraduate Teaching Assistant</h3>
+              <p class="organization">BRAC University</p>
+              <ul>
+                <li>Courses: Programming Language I &amp; II, Discrete Mathematics</li>
+                <li>Assisted students in labs and graded course assignments</li>
+              </ul>
+            </div>
+            <span aria-hidden="true" class="experience-index mono">08</span>
+          </article>
+        </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section class="projects" id="projects" aria-labelledby="projects-heading">
       <div class="section-heading">
         <h2 id="projects-heading">Projects</h2>
       </div>
-      <div class="projects-list" id="projects-list"></div>
+
+      <div class="projects-list">
+        <article>
+          <div class="project-title">
+            <h3>ClassX</h3>
+          </div>
+          <div class="project-description">
+            <p>A digital course hub developed during my time as a lecturer, featuring self-produced lecture videos, slides, notes and practice materials, designed to support remote learning during the COVID-19 pandemic.</p>
+            <a class="text-link" href="https://mueez-overflow.github.io/classx/" target="_blank" rel="noopener noreferrer">Explore ClassX <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <footer class="site-footer">
